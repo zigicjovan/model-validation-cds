@@ -7507,8 +7507,96 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body.jp-Notebook {
+    margin: 0;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #f8f9fa;
+    border-right: 1px solid #ddd;
+    z-index: 1000;
+    font-size: 0.9rem;
+  }
+
+  .sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #444;
+    padding: 4px 8px;
+    border-left: 2px solid transparent;
+    line-height: 1.35;
+  }
+
+  .sidebar a:hover {
+    color: #0077cc;
+  }
+
+  .sidebar a.h2 {
+    padding-left: 10px;
+  }
+
+  .sidebar a.h3 {
+    padding-left: 22px;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  .sidebar a.active {
+    color: #0077cc;
+    font-weight: bold;
+    border-left: 2px solid #0077cc;
+    background: #eef6ff;
+  }
+
+  .content {
+    margin-left: 280px;
+    padding: 24px 32px;
+  }
+
+  .content main {
+    max-width: 900px;
+  }
+</style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+
+<div class="sidebar">
+  <h3>Contents</h3>
+  <ul></ul>
+</div>
+
+<div class="content">
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2c2b34e3-9d68-4159-8f69-a9f2f60ca9ca">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -22330,5 +22418,59 @@ Max deviation (bps): 14.624086955714079
 </div>
 </div>
 </main>
+</div>
+<script>
+const toc = document.querySelector('.sidebar ul');
+const headers = document.querySelectorAll('h2, h3');
+
+headers.forEach(h => {
+  if (h.id) {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+
+    a.classList.add(h.tagName.toLowerCase());
+
+    li.appendChild(a);
+    toc.appendChild(li);
+  }
+});
+</script>
+<script>
+const links = document.querySelectorAll('.sidebar a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+
+  document.querySelectorAll('h2, h3').forEach(section => {
+    const top = section.offsetTop;
+    if (window.scrollY >= top - 100) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  links.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('body *').forEach(el => {
+    if (el.childNodes) {
+      el.childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          node.textContent = node.textContent.replace(/¶/g, '');
+        }
+      });
+    }
+  });
+});
+</script>
 </body>
 </html>
