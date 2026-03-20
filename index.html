@@ -7525,11 +7525,13 @@ a.anchor-link {
     height: 100vh;
     overflow-y: auto;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px;
+    padding-top: 60px;
     background: #f8f9fa;
     border-right: 1px solid #ddd;
     z-index: 1000;
     font-size: 0.9rem;
+    transition: transform 0.2s ease;
   }
 
   .sidebar h3 {
@@ -7562,14 +7564,27 @@ a.anchor-link {
     color: #0077cc;
   }
 
+  .sidebar a.h1 {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 12px;
+  }
+
   .sidebar a.h2 {
     padding-left: 10px;
+    font-weight: 600;
   }
 
   .sidebar a.h3 {
     padding-left: 22px;
     font-size: 0.85rem;
     color: #666;
+  }
+
+  .sidebar a.h4 {
+    padding-left: 34px;
+    font-size: 0.8rem;
+    color: #777;
   }
 
   .sidebar a.active {
@@ -7582,114 +7597,37 @@ a.anchor-link {
   .content {
     margin-left: 280px;
     padding: 24px 32px;
+    transition: margin-left 0.2s ease;
   }
 
   .content main {
     max-width: 900px;
   }
 
-#sidebar-toggle {
-  position: fixed;
-  top: 14px;
-  left: 14px;
-  z-index: 2000;
-  border: 1px solid #ccc;
-  background: #ffffff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-}
+  #sidebar-toggle {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 2000;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
 
-#sidebar-toggle:hover {
-  background: #f3f4f6;
-}
+  #sidebar-toggle:hover {
+    background: #f3f4f6;
+  }
 
-.sidebar {
-  transition: transform 0.2s ease;
-}
+  body.sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+  }
 
-.content {
-  transition: margin-left 0.2s ease;
-}
-
-body.sidebar-collapsed .sidebar {
-  transform: translateX(-100%);
-}
-
-body.sidebar-collapsed .content {
-  margin-left: 32px !important;
-}
-.toc-group {
-  margin-bottom: 6px;
-}
-
-.toc-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.toc-symbol {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 2px 4px;
-  font-size: 0.85rem;
-  color: #666;
-  flex: 0 0 auto;
-}
-
-.toc-symbol:hover {
-  color: #0077cc;
-}
-
-.toc-link {
-  display: block;
-  text-decoration: none;
-  color: #444;
-  line-height: 1.35;
-  padding: 4px 6px;
-  border-left: 2px solid transparent;
-}
-
-.toc-link:hover {
-  color: #0077cc;
-}
-
-.toc-h1 {
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-top: 12px;
-}
-
-.toc-h2 {
-  font-weight: 600;
-  flex: 1 1 auto;
-}
-
-.toc-h3 {
-  padding-left: 26px;
-  font-size: 0.85rem;
-  color: #666;
-}
-
-.toc-children {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.toc-children.collapsed {
-  display: none;
-}
-
-.toc-link.active {
-  color: #0077cc;
-  font-weight: 600;
-  border-left: 2px solid #0077cc;
-  background: #eef6ff;
-}
+  body.sidebar-collapsed .content {
+    margin-left: 32px !important;
+  }
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
@@ -7700,7 +7638,6 @@ body.sidebar-collapsed .content {
   <h3>Contents</h3>
   <ul></ul>
 </div>
-
 <div class="content">
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2c2b34e3-9d68-4159-8f69-a9f2f60ca9ca">
@@ -7711,10 +7648,10 @@ body.sidebar-collapsed .content {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Model-Validation-of-a-CDS-Hazard-Rate-Framework-for-Credit-Risk-under-Stochastic-Intensity">Model Validation of a CDS Hazard-Rate Framework for Credit Risk under Stochastic Intensity<a class="anchor-link" href="#Model-Validation-of-a-CDS-Hazard-Rate-Framework-for-Credit-Risk-under-Stochastic-Intensity">¶</a></h1><p><strong>Author</strong>: <a href="https://www.jovanzigic.com/">Jovan Zigic</a><br/>
 <strong>Date</strong>: March 20, 2026</p>
-<h2 id="1.-Purpose">1. Purpose<a class="anchor-link" href="#1.-Purpose">¶</a></h2><p>We conduct a comprehensive model risk assessment of a hazard-rate framework for credit default swaps (CDS) extended by stochastic intensity and correlated defaults.</p>
-<p>I am very interested in model risk management because it focuses on something I value strongly - reducing uncertainty through rigorous analysis. Model risk management requires careful validation, clear communication, and intellectual independence, which aligns closely with how I approach research.</p>
-<h2 id="2.-Scope-of-Knowledge">2. Scope of Knowledge<a class="anchor-link" href="#2.-Scope-of-Knowledge">¶</a></h2><p>The following concepts and resources have been critical to my understanding of quantitative analysis for financial markets, whether or not they were directly applied to this project.</p>
-<p><strong>Skills</strong>:</p>
+<h2 id="A.-Purpose">A. Purpose<a class="anchor-link" href="#A.-Purpose">¶</a></h2><p>We conduct a structured model risk assessment of a reduced-form hazard-rate framework for credit default swaps (CDS), extended to incorporate stochastic intensity and correlated defaults.</p>
+<p>Model risk management is concerned with the identification, measurement, and control of uncertainty arising from model assumptions, implementation, and use. This requires rigorous validation, transparent communication, and independent challenge—principles that align closely with disciplined mathematical and computational analysis.</p>
+<h2 id="B.-Scope-of-Knowledge">B. Scope of Knowledge<a class="anchor-link" href="#B.-Scope-of-Knowledge">¶</a></h2><p><strong>Skills</strong>:</p>
+<p>The following competencies underpin the quantitative and validation methodologies applied throughout this project:</p>
 <ol>
 <li>Foundational Mathematics (Linear Algebra, Probability, Statistics)</li>
 <li>Stochastic Calculus (Martingales/Markov Processes, Geometric Brownian Motion, Itô's lemma)</li>
@@ -7723,15 +7660,16 @@ body.sidebar-collapsed .content {
 <li>Programming (Python, C++)</li>
 </ol>
 <p><strong>References</strong>:</p>
+<p>The following references inform both the quantitative modeling approach and the model risk management framework:</p>
 <ol>
 <li><a href="https://www.amazon.com/Paul-Wilmott-Introduces-Quantitative-Finance/dp/0470319585">Wilmott, P. (2007). <em>Paul Wilmott Introduces Quantitative Finance (2nd Edition).</em></a></li>
 <li><a href="https://www.amazon.com/Frequently-Asked-Questions-Quantitative-Finance/dp/0470748753">Wilmott, P. (2009). <em>Frequently Asked Questions in Quantitative Finance (2nd Edition).</em></a></li>
 <li><a href="https://www.amazon.com/Understanding-Managing-Model-Risk-Validators/dp/0470977612">Morini, M. (2010). <em>Understanding and Managing Model Risk.</em></a></li>
 <li><a href="https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107a1.pdf">Federal Reserve Board. (2011). <em>SR 11-7: Supervisory Guidance on Model Risk Management.</em></a></li>
-<li><a href="https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107a1.pdf">OCC. (2021). <em>Comptroller’s Handbook: Model Risk Management.</em></a></li>
-<li><a href="https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107a1.pdf">MRMIA. (2025). <em>Principles for Model Risk Management.</em></a></li>
+<li><a href="https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/model-risk-management/index-model-risk-management.html">OCC. (2021). <em>Comptroller’s Handbook: Model Risk Management.</em></a></li>
+<li><a href="https://www.mrmia.org/en/publications/principles-for-model-risk-management">MRMIA. (2025). <em>Principles for Model Risk Management.</em></a></li>
 </ol>
-<h2 id="3.-Documented-Framework">3. Documented Framework<a class="anchor-link" href="#3.-Documented-Framework">¶</a></h2><p>This framework provides a comprehensive, standardized model risk assessment with cross-asset applicability. It is not intended to replicate the dynamic, model-specific validation, monitoring, and governance processes implemented throughout the model lifecycle in production environments.</p>
+<h2 id="C.-Documented-Framework">C. Documented Framework<a class="anchor-link" href="#C.-Documented-Framework">¶</a></h2><p>This framework provides a comprehensive, standardized model risk assessment with cross-asset applicability. It is not intended to replicate the dynamic, model-specific validation, monitoring, and governance processes implemented throughout the model lifecycle in production environments.</p>
 <ol>
 <li><p><strong><a href="#d1">Verification</a></strong><br/>
 a. <a href="#d1a">Mathematical formulation</a><br/>
@@ -7781,7 +7719,7 @@ d. <a href="#d8d">Recalibration frequency</a><br/>
 e. <a href="#d8e">Change management</a></p>
 </li>
 </ol>
-<h2 id="4.-Summary">4. Summary<a class="anchor-link" href="#4.-Summary">¶</a></h2><p>This quantitative finance project covers the following generalized specifications:</p>
+<h2 id="D.-Summary">D. Summary<a class="anchor-link" href="#D.-Summary">¶</a></h2><p>This quantitative finance project covers the following generalized specifications:</p>
 <ol>
 <li><strong>Task</strong>: Model Validation</li>
 <li><strong>Instrument</strong>: Credit Default Swaps (CDS)</li>
@@ -7823,7 +7761,7 @@ e. <a href="#d8e">Change management</a></p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="1.-Verification">1. Verification<a class="anchor-link" href="#1.-Verification">¶</a></h1><p><a id="d1"></a>
+<h2 id="1.-Verification">1. Verification<a class="anchor-link" href="#1.-Verification">¶</a></h2><p><a id="d1"></a>
 <em>(Did we build the model correctly?)</em></p>
 </div>
 </div>
@@ -7835,7 +7773,7 @@ e. <a href="#d8e">Change management</a></p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.a.-Mathematical-formulation">1.a. Mathematical formulation<a class="anchor-link" href="#1.a.-Mathematical-formulation">¶</a></h2><p><a id="d1a"></a>
+<h3 id="1.a.-Mathematical-formulation">1.a. Mathematical formulation<a class="anchor-link" href="#1.a.-Mathematical-formulation">¶</a></h3><p><a id="d1a"></a>
 <em>(Is the model mathematically well-defined and internally consistent?)</em></p>
 </div>
 </div>
@@ -7901,7 +7839,7 @@ $$ s = \frac{ \text{Prot} }{ \text{Annuity} }. \tag{1.17} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.b.-Numerical-stability-and-convergence">1.b. Numerical stability and convergence<a class="anchor-link" href="#1.b.-Numerical-stability-and-convergence">¶</a></h2><p><a id="d1b"></a>
+<h3 id="1.b.-Numerical-stability-and-convergence">1.b. Numerical stability and convergence<a class="anchor-link" href="#1.b.-Numerical-stability-and-convergence">¶</a></h3><p><a id="d1b"></a>
 <em>(Do numerical methods yield stable results and converge as discretization is refined?)</em></p>
 </div>
 </div>
@@ -7931,7 +7869,7 @@ which converges with order $\mathcal{O} (\Delta t) $ as $\Delta t\to 0$.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="I.-Numerical-Set-up">I. Numerical Set-up<a class="anchor-link" href="#I.-Numerical-Set-up">¶</a></h3>
+<h4 id="I.-Numerical-Set-up">I. Numerical Set-up<a class="anchor-link" href="#I.-Numerical-Set-up">¶</a></h4>
 </div>
 </div>
 </div>
@@ -8107,7 +8045,7 @@ which converges with order $\mathcal{O} (\Delta t) $ as $\Delta t\to 0$.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cds_protection_leg_from_tau</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
@@ -8143,7 +8081,7 @@ which converges with order $\mathcal{O} (\Delta t) $ as $\Delta t\to 0$.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="II.-Positivity-and-path-stability">II. Positivity and path stability<a class="anchor-link" href="#II.-Positivity-and-path-stability">¶</a></h3><p>We first verify that the full-truncation Euler scheme maintains non-negativity of the simulated intensity paths and produces stable path behavior. The minimum simulated intensity should remain non-negative under full truncation. The sample paths should also exhibit stable mean-reverting behavior without numerical blow-up.</p>
+<h4 id="II.-Positivity-and-path-stability">II. Positivity and path stability<a class="anchor-link" href="#II.-Positivity-and-path-stability">¶</a></h4><p>We first verify that the full-truncation Euler scheme maintains non-negativity of the simulated intensity paths and produces stable path behavior. The minimum simulated intensity should remain non-negative under full truncation. The sample paths should also exhibit stable mean-reverting behavior without numerical blow-up.</p>
 </div>
 </div>
 </div>
@@ -8337,7 +8275,7 @@ $\theta=0.03$ and indicates no numerical instability or path explosion.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="III.-Time-step-convergence">III. Time-step convergence<a class="anchor-link" href="#III.-Time-step-convergence">¶</a></h3><p>We next assess convergence with respect to the discretization step $\Delta t$ by comparing survival probabilities and fair CDS spreads across increasingly refined grids. Convergence is assessed by treating the finest time grid as a numerical reference. Absolute differences should decrease as $\Delta t \to 0$.</p>
+<h4 id="III.-Time-step-convergence">III. Time-step convergence<a class="anchor-link" href="#III.-Time-step-convergence">¶</a></h4><p>We next assess convergence with respect to the discretization step $\Delta t$ by comparing survival probabilities and fair CDS spreads across increasingly refined grids. Convergence is assessed by treating the finest time grid as a numerical reference. Absolute differences should decrease as $\Delta t \to 0$.</p>
 </div>
 </div>
 </div>
@@ -8767,7 +8705,7 @@ Finest non-reference grid:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="IV.-Monte-Carlo-convergence">IV. Monte Carlo convergence<a class="anchor-link" href="#IV.-Monte-Carlo-convergence">¶</a></h3><p>We now test convergence with respect to the number of Monte Carlo paths $N$ while holding the time step fixed. As $N$ increases, Monte Carlo estimates should stabilize, with standard error decreasing at the expected rate $\mathcal{O}\left(\frac1{\sqrt N}\right)$.</p>
+<h4 id="IV.-Monte-Carlo-convergence">IV. Monte Carlo convergence<a class="anchor-link" href="#IV.-Monte-Carlo-convergence">¶</a></h4><p>We now test convergence with respect to the number of Monte Carlo paths $N$ while holding the time step fixed. As $N$ increases, Monte Carlo estimates should stabilize, with standard error decreasing at the expected rate $\mathcal{O}\left(\frac1{\sqrt N}\right)$.</p>
 </div>
 </div>
 </div>
@@ -9017,7 +8955,7 @@ Standard error scaling:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="V.-Default-time-discretization-error">V. Default-time discretization error<a class="anchor-link" href="#V.-Default-time-discretization-error">¶</a></h3><p>Default times are generated by identifying the first time at which the cumulative intensity exceeds an exponential threshold. Since the crossing is observed only on the simulation grid, the default time is subject to discretization error. Grid refinement should reduce discretization bias in default timing and stabilize derived quantities such as default probability and fair CDS spread.</p>
+<h4 id="V.-Default-time-discretization-error">V. Default-time discretization error<a class="anchor-link" href="#V.-Default-time-discretization-error">¶</a></h4><p>Default times are generated by identifying the first time at which the cumulative intensity exceeds an exponential threshold. Since the crossing is observed only on the simulation grid, the default time is subject to discretization error. Grid refinement should reduce discretization bias in default timing and stabilize derived quantities such as default probability and fair CDS spread.</p>
 </div>
 </div>
 </div>
@@ -9261,7 +9199,7 @@ Error at smallest non-reference dt:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="VI.-Conclusion">VI. Conclusion<a class="anchor-link" href="#VI.-Conclusion">¶</a></h3><p>The full-truncation Euler scheme preserves non-negativity of the CIR intensity paths and produces stable mean-reverting dynamics across all simulations. Monte Carlo estimates exhibit the expected convergence behavior as the number of simulated paths increases, confirming the consistency of the implementation.</p>
+<h4 id="VI.-Conclusion">VI. Conclusion<a class="anchor-link" href="#VI.-Conclusion">¶</a></h4><p>The full-truncation Euler scheme preserves non-negativity of the CIR intensity paths and produces stable mean-reverting dynamics across all simulations. Monte Carlo estimates exhibit the expected convergence behavior as the number of simulated paths increases, confirming the consistency of the implementation.</p>
 <p>Time-discretization analysis shows that default-time bias decreases under grid refinement, with default probability and fair CDS spread remaining stable across the tested range of time steps. While the conditional mean default time exhibits greater sensitivity at coarse discretizations, it stabilizes as the grid is refined. Overall, the results demonstrate that model outputs are numerically robust with respect to both simulation granularity and sampling variability, supporting the reliability of the numerical framework.</p>
 </div>
 </div>
@@ -9273,7 +9211,7 @@ Error at smallest non-reference dt:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.c.-Independent-replication">1.c. Independent replication<a class="anchor-link" href="#1.c.-Independent-replication">¶</a></h2><p><a id="d1c"></a>
+<h3 id="1.c.-Independent-replication">1.c. Independent replication<a class="anchor-link" href="#1.c.-Independent-replication">¶</a></h3><p><a id="d1c"></a>
 <em>(Are results reproducible under independent implementation or known benchmarks?)</em></p>
 </div>
 </div>
@@ -9351,7 +9289,7 @@ Relative difference          = 0.439%
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.d.-Payoff-and-boundary-condition-validation">1.d. Payoff and boundary condition validation<a class="anchor-link" href="#1.d.-Payoff-and-boundary-condition-validation">¶</a></h2><p><a id="d1d"></a>
+<h3 id="1.d.-Payoff-and-boundary-condition-validation">1.d. Payoff and boundary condition validation<a class="anchor-link" href="#1.d.-Payoff-and-boundary-condition-validation">¶</a></h3><p><a id="d1d"></a>
 <em>(Do outputs match expected payoffs and limiting cases?)</em></p>
 </div>
 </div>
@@ -9483,7 +9421,7 @@ R = 1.0 → spread = 0.000000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="2.-Conceptual-Soundness*">2. Conceptual Soundness*<a class="anchor-link" href="#2.-Conceptual-Soundness*">¶</a></h1><p><a id="d2"></a>
+<h2 id="2.-Conceptual-Soundness*">2. Conceptual Soundness*<a class="anchor-link" href="#2.-Conceptual-Soundness*">¶</a></h2><p><a id="d2"></a>
 <em>(Is this the right model?)</em></p>
 <p>Having verified the mathematical formulation, numerical behavior, implementation consistency, and payoff logic, the next step is to assess the conceptual soundness of the modeling framework itself.</p>
 <p>*While <a href="https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107a1.pdf">SR 11-7</a> treats conceptual soundness broadly - encompassing both model design and implementation - the present framework separates verification of implementation from evaluation of model assumptions and structure for analytical transparency.</p>
@@ -9497,7 +9435,7 @@ R = 1.0 → spread = 0.000000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.a.-Model-assumptions">2.a. Model assumptions<a class="anchor-link" href="#2.a.-Model-assumptions">¶</a></h2><p><a id="d2a"></a>
+<h3 id="2.a.-Model-assumptions">2.a. Model assumptions<a class="anchor-link" href="#2.a.-Model-assumptions">¶</a></h3><p><a id="d2a"></a>
 <em>(Are assumptions realistic and appropriate?)</em></p>
 </div>
 </div>
@@ -9522,7 +9460,7 @@ R = 1.0 → spread = 0.000000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.b.-Financial-rationale">2.b. Financial rationale<a class="anchor-link" href="#2.b.-Financial-rationale">¶</a></h2><p><a id="d2b"></a>
+<h3 id="2.b.-Financial-rationale">2.b. Financial rationale<a class="anchor-link" href="#2.b.-Financial-rationale">¶</a></h3><p><a id="d2b"></a>
 <em>(Does the model capture the economics of credit risk?)</em></p>
 </div>
 </div>
@@ -9547,7 +9485,7 @@ R = 1.0 → spread = 0.000000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.c.-Applicability">2.c. Applicability<a class="anchor-link" href="#2.c.-Applicability">¶</a></h2><p><a id="d2c"></a>
+<h3 id="2.c.-Applicability">2.c. Applicability<a class="anchor-link" href="#2.c.-Applicability">¶</a></h3><p><a id="d2c"></a>
 <em>(Is the model suitable for its intended use?)</em></p>
 </div>
 </div>
@@ -9572,7 +9510,7 @@ R = 1.0 → spread = 0.000000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.d.-Structural-limitations">2.d. Structural limitations<a class="anchor-link" href="#2.d.-Structural-limitations">¶</a></h2><p><a id="d2d"></a>
+<h3 id="2.d.-Structural-limitations">2.d. Structural limitations<a class="anchor-link" href="#2.d.-Structural-limitations">¶</a></h3><p><a id="d2d"></a>
 <em>(What are the model’s inherent limitations?)</em></p>
 </div>
 </div>
@@ -9598,7 +9536,7 @@ R = 1.0 → spread = 0.000000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="3.-Calibration">3. Calibration<a class="anchor-link" href="#3.-Calibration">¶</a></h1><p><a id="d3"></a>
+<h2 id="3.-Calibration">3. Calibration<a class="anchor-link" href="#3.-Calibration">¶</a></h2><p><a id="d3"></a>
 <em>(Are the parameters trustworthy?)</em></p>
 </div>
 </div>
@@ -9610,7 +9548,7 @@ R = 1.0 → spread = 0.000000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.a.-Methodology">3.a. Methodology<a class="anchor-link" href="#3.a.-Methodology">¶</a></h2><p><a id="d3a"></a>
+<h3 id="3.a.-Methodology">3.a. Methodology<a class="anchor-link" href="#3.a.-Methodology">¶</a></h3><p><a id="d3a"></a>
 <em>(Is calibration well-posed and theoretically sound?)</em></p>
 </div>
 </div>
@@ -10152,7 +10090,7 @@ Fit diagnostics:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.b.-Parameter-stability">3.b. Parameter stability<a class="anchor-link" href="#3.b.-Parameter-stability">¶</a></h2><p><a id="d3b"></a>
+<h3 id="3.b.-Parameter-stability">3.b. Parameter stability<a class="anchor-link" href="#3.b.-Parameter-stability">¶</a></h3><p><a id="d3b"></a>
 <em>(Are parameters stable across time and data?)</em></p>
 </div>
 </div>
@@ -10354,7 +10292,7 @@ RMSE   = 4.580538e-04
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Test-I.-Stability-to-initial-guess">Test I. Stability to initial guess<a class="anchor-link" href="#Test-I.-Stability-to-initial-guess">¶</a></h3>
+<h4 id="I.-Stability-to-initial-guess">I. Stability to initial guess<a class="anchor-link" href="#I.-Stability-to-initial-guess">¶</a></h4>
 </div>
 </div>
 </div>
@@ -10686,7 +10624,7 @@ Test 1: Stability to initial guess
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Test-II.-Stability-to-small-perturbations-in-market-spreads">Test II. Stability to small perturbations in market spreads<a class="anchor-link" href="#Test-II.-Stability-to-small-perturbations-in-market-spreads">¶</a></h3>
+<h4 id="II.-Stability-to-small-perturbations-in-market-spreads">II. Stability to small perturbations in market spreads<a class="anchor-link" href="#II.-Stability-to-small-perturbations-in-market-spreads">¶</a></h4>
 </div>
 </div>
 </div>
@@ -11017,7 +10955,7 @@ Test 1: Stability to initial guess
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="III.-Stability-under-leave-one-out-maturity-recalibration">III. Stability under leave-one-out maturity recalibration<a class="anchor-link" href="#III.-Stability-under-leave-one-out-maturity-recalibration">¶</a></h3>
+<h4 id="III.-Stability-under-leave-one-out-maturity-recalibration">III. Stability under leave-one-out maturity recalibration<a class="anchor-link" href="#III.-Stability-under-leave-one-out-maturity-recalibration">¶</a></h4>
 </div>
 </div>
 </div>
@@ -11537,7 +11475,7 @@ Consolidated parameter stability summary
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.c.-Data-quality">3.c. Data quality<a class="anchor-link" href="#3.c.-Data-quality">¶</a></h2><p><a id="d3c"></a>
+<h3 id="3.c.-Data-quality">3.c. Data quality<a class="anchor-link" href="#3.c.-Data-quality">¶</a></h3><p><a id="d3c"></a>
 <em>(Is the calibration data reliable and appropriate?)</em></p>
 </div>
 </div>
@@ -12128,7 +12066,7 @@ Coeff variation: 0.044
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.d.-Sensitivity-to-inputs">3.d. Sensitivity to inputs<a class="anchor-link" href="#3.d.-Sensitivity-to-inputs">¶</a></h2><p><a id="d3d"></a>
+<h3 id="3.d.-Sensitivity-to-inputs">3.d. Sensitivity to inputs<a class="anchor-link" href="#3.d.-Sensitivity-to-inputs">¶</a></h3><p><a id="d3d"></a>
 <em>(How sensitive are outputs to input variation?)</em></p>
 </div>
 </div>
@@ -12386,7 +12324,7 @@ RMSE   = 2.460155e-04
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Test-I.-Parallel-spread-shifts">Test I. Parallel spread shifts<a class="anchor-link" href="#Test-I.-Parallel-spread-shifts">¶</a></h3>
+<h4 id="I.-Parallel-spread-shifts">I. Parallel spread shifts<a class="anchor-link" href="#I.-Parallel-spread-shifts">¶</a></h4>
 </div>
 </div>
 </div>
@@ -12630,7 +12568,7 @@ Test 1: Sensitivity to parallel spread shifts
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Test-II.-Recovery-rate">Test II. Recovery rate<a class="anchor-link" href="#Test-II.-Recovery-rate">¶</a></h3>
+<h4 id="II.-Recovery-rate">II. Recovery rate<a class="anchor-link" href="#II.-Recovery-rate">¶</a></h4>
 </div>
 </div>
 </div>
@@ -12896,7 +12834,7 @@ Test 2: Sensitivity to recovery rate R
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Test-III.-Risk-free-rate">Test III. Risk-free rate<a class="anchor-link" href="#Test-III.-Risk-free-rate">¶</a></h3>
+<h4 id="III.-Risk-free-rate">III. Risk-free rate<a class="anchor-link" href="#III.-Risk-free-rate">¶</a></h4>
 </div>
 </div>
 </div>
@@ -13257,7 +13195,7 @@ Consolidated input sensitivity summary
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="4.-Benchmarking">4. Benchmarking<a class="anchor-link" href="#4.-Benchmarking">¶</a></h1><p><a id="d4"></a>
+<h2 id="4.-Benchmarking">4. Benchmarking<a class="anchor-link" href="#4.-Benchmarking">¶</a></h2><p><a id="d4"></a>
 <em>(How does it compare?)</em></p>
 </div>
 </div>
@@ -13269,7 +13207,7 @@ Consolidated input sensitivity summary
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.a.-Challenger-models">4.a. Challenger models<a class="anchor-link" href="#4.a.-Challenger-models">¶</a></h2><p><a id="d4a"></a>
+<h3 id="4.a.-Challenger-models">4.a. Challenger models<a class="anchor-link" href="#4.a.-Challenger-models">¶</a></h3><p><a id="d4a"></a>
 <em>(What alternative models are used for comparison?)</em></p>
 </div>
 </div>
@@ -13282,17 +13220,17 @@ Consolidated input sensitivity summary
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>To benchmark the stochastic-intensity CDS framework, a hierarchy of challenger models was constructed to isolate the contribution of model complexity. Together, these challengers separate the effects of term-structure fitting, mean reversion, stochastic volatility, and dependence structure. In all cases, survival probabilities are used within the CDS pricing framework defined in (1.12) to (1.17).</p>
-<h3 id="I.-Constant-Intensity-Model">I. Constant-Intensity Model<a class="anchor-link" href="#I.-Constant-Intensity-Model">¶</a></h3><p>The first challenger is a constant-intensity reduced-form model, which provides a transparent baseline with closed-form survival probabilities and no simulation error. It is defined by
+<h4 id="I.-Constant-Intensity-Model">I. Constant-Intensity Model<a class="anchor-link" href="#I.-Constant-Intensity-Model">¶</a></h4><p>The first challenger is a constant-intensity reduced-form model, which provides a transparent baseline with closed-form survival probabilities and no simulation error. It is defined by
 $$ \lambda_t = \lambda. \tag{4.1}$$
 Using $(1.1)$, the survival probability is
 $$ \mathbb{Q}(\tau &gt; t) = \exp\left( -\lambda t \right). \tag{4.2}$$</p>
-<h3 id="II.-Piecewise-Constant-Hazard-Model">II. Piecewise-Constant Hazard Model<a class="anchor-link" href="#II.-Piecewise-Constant-Hazard-Model">¶</a></h3><p>The second is a piecewise-constant deterministic intensity model bootstrapped from market spreads, allowing flexible fit of the term structure without introducing diffusion dynamics. It is defined by
+<h4 id="II.-Piecewise-Constant-Hazard-Model">II. Piecewise-Constant Hazard Model<a class="anchor-link" href="#II.-Piecewise-Constant-Hazard-Model">¶</a></h4><p>The second is a piecewise-constant deterministic intensity model bootstrapped from market spreads, allowing flexible fit of the term structure without introducing diffusion dynamics. It is defined by
 $$ \lambda_t = \lambda_i ~~,~~t\in(T_{i-1},T_i]. \tag{4.3}$$
 The integrated intensity is given by
 $$ \int_0^t \lambda_s \ ds = \sum_i \lambda_i (\min(t,T_i) - T_{i-1})_+ \tag{4.4}$$
 and the survival probability follows from $(1.1)$ as
 $$ \mathbb{Q}(\tau &gt; t) = \exp\left( -\int_0^t \lambda_s \ ds \right). \tag{4.5}$$</p>
-<h3 id="III.-Deterministic-Zero-Volatility-CIR-Model">III. Deterministic Zero-Volatility CIR Model<a class="anchor-link" href="#III.-Deterministic-Zero-Volatility-CIR-Model">¶</a></h3><p>The third is a deterministic CIR intensity model obtained by setting the volatility parameter to zero, thereby preserving the mean-reverting hazard specification while removing stochastic fluctuations. It is defined by
+<h4 id="III.-Deterministic-Zero-Volatility-CIR-Model">III. Deterministic Zero-Volatility CIR Model<a class="anchor-link" href="#III.-Deterministic-Zero-Volatility-CIR-Model">¶</a></h4><p>The third is a deterministic CIR intensity model obtained by setting the volatility parameter to zero, thereby preserving the mean-reverting hazard specification while removing stochastic fluctuations. It is defined by
 $$ \frac{d}{dt}\lambda_t = \kappa(\theta-\lambda_t). \tag{4.6}$$
 The closed-form solution is
 $$ \lambda_t = \theta + (\lambda_0 - \theta)e^{-\kappa t} \tag{4.7}$$
@@ -13300,7 +13238,7 @@ with integrated intensity
 $$ \int_0^t \lambda_s \ ds = \theta t + \frac{\lambda_0 - \theta}{\kappa}(1-e^{-\kappa t}), \tag{4.8}$$
 and survival probability from $(1.1)$:
 $$ \mathbb{Q}(\tau &gt; t) = \exp\left( -\int_0^t \lambda_s \ ds \right). \tag{4.9}$$</p>
-<h3 id="IV.-Independent-Stochastic-CIR-Model">IV. Independent Stochastic CIR Model<a class="anchor-link" href="#IV.-Independent-Stochastic-CIR-Model">¶</a></h3><p>Where dependence effects are studied, an additional challenger is defined by retaining stochastic CIR intensity dynamics as in $(1.2)$, but removing correlation across drivers by setting
+<h4 id="IV.-Independent-Stochastic-CIR-Model">IV. Independent Stochastic CIR Model<a class="anchor-link" href="#IV.-Independent-Stochastic-CIR-Model">¶</a></h4><p>Where dependence effects are studied, an additional challenger is defined by retaining stochastic CIR intensity dynamics as in $(1.2)$, but removing correlation across drivers by setting
 $$\rho_{ij} = 0 ~~\text{for } i\neq j.$$
 The survival probability is given by $(1.5)$, with expectations taken under independent intensity paths. This challenger isolates the contribution of dependence structure to joint default behavior and portfolio risk measures.</p>
 </div>
@@ -14137,7 +14075,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.b.-Comparison-metrics">4.b. Comparison metrics<a class="anchor-link" href="#4.b.-Comparison-metrics">¶</a></h2><p><a id="d4b"></a>
+<h3 id="4.b.-Comparison-metrics">4.b. Comparison metrics<a class="anchor-link" href="#4.b.-Comparison-metrics">¶</a></h3><p><a id="d4b"></a>
 <em>(How are model differences quantified?)</em></p>
 </div>
 </div>
@@ -14581,7 +14519,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="I.-Spread-comparison-across-maturities">I. Spread comparison across maturities<a class="anchor-link" href="#I.-Spread-comparison-across-maturities">¶</a></h3>
+<h4 id="I.-Spread-comparison-across-maturities">I. Spread comparison across maturities<a class="anchor-link" href="#I.-Spread-comparison-across-maturities">¶</a></h4>
 </div>
 </div>
 </div>
@@ -14683,7 +14621,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="II.-Error-metrics-relative-to-the-piecewise-hazard-benchmark">II. Error metrics relative to the piecewise-hazard benchmark<a class="anchor-link" href="#II.-Error-metrics-relative-to-the-piecewise-hazard-benchmark">¶</a></h3>
+<h4 id="II.-Error-metrics-relative-to-the-piecewise-hazard-benchmark">II. Error metrics relative to the piecewise-hazard benchmark<a class="anchor-link" href="#II.-Error-metrics-relative-to-the-piecewise-hazard-benchmark">¶</a></h4>
 </div>
 </div>
 </div>
@@ -14801,7 +14739,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="III.-Monte-Carlo-variability-in-the-stochastic-CIR-model">III. Monte Carlo variability in the stochastic CIR model<a class="anchor-link" href="#III.-Monte-Carlo-variability-in-the-stochastic-CIR-model">¶</a></h3>
+<h4 id="III.-Monte-Carlo-variability-in-the-stochastic-CIR-model">III. Monte Carlo variability in the stochastic CIR model<a class="anchor-link" href="#III.-Monte-Carlo-variability-in-the-stochastic-CIR-model">¶</a></h4>
 </div>
 </div>
 </div>
@@ -14880,7 +14818,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="IV.-Nested-model-consistency-check">IV. Nested-model consistency check<a class="anchor-link" href="#IV.-Nested-model-consistency-check">¶</a></h3>
+<h4 id="IV.-Nested-model-consistency-check">IV. Nested-model consistency check<a class="anchor-link" href="#IV.-Nested-model-consistency-check">¶</a></h4>
 </div>
 </div>
 </div>
@@ -15045,7 +14983,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.c.-Relative-differences">4.c. Relative differences<a class="anchor-link" href="#4.c.-Relative-differences">¶</a></h2><p><a id="d4c"></a>
+<h3 id="4.c.-Relative-differences">4.c. Relative differences<a class="anchor-link" href="#4.c.-Relative-differences">¶</a></h3><p><a id="d4c"></a>
 <em>(Are differences explained by model structure?)</em></p>
 </div>
 </div>
@@ -15069,7 +15007,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="5.-Outcomes-Analysis">5. Outcomes Analysis<a class="anchor-link" href="#5.-Outcomes-Analysis">¶</a></h1><p><a id="d5"></a>
+<h2 id="5.-Outcomes-Analysis">5. Outcomes Analysis<a class="anchor-link" href="#5.-Outcomes-Analysis">¶</a></h2><p><a id="d5"></a>
 <em>(Does it work in practice?)</em></p>
 </div>
 </div>
@@ -15081,7 +15019,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.a.-Back-testing*">5.a. Back-testing*<a class="anchor-link" href="#5.a.-Back-testing*">¶</a></h2><p><a id="d5a"></a>
+<h3 id="5.a.-Back-testing*">5.a. Back-testing*<a class="anchor-link" href="#5.a.-Back-testing*">¶</a></h3><p><a id="d5a"></a>
 <em>(Do predictions align with realized outcomes?)</em></p>
 <p>*For this project, we conduct pseudo / out-of-sample back-testing using synthetic or held-out data.</p>
 </div>
@@ -15105,7 +15043,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="I.-Cross-sectional-holdout-validation">I. Cross-sectional holdout validation<a class="anchor-link" href="#I.-Cross-sectional-holdout-validation">¶</a></h3>
+<h4 id="I.-Cross-sectional-holdout-validation">I. Cross-sectional holdout validation<a class="anchor-link" href="#I.-Cross-sectional-holdout-validation">¶</a></h4>
 </div>
 </div>
 </div>
@@ -15329,7 +15267,7 @@ T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="II.-Calibration-stability-under-perturbations">II. Calibration stability under perturbations<a class="anchor-link" href="#II.-Calibration-stability-under-perturbations">¶</a></h3>
+<h4 id="II.-Calibration-stability-under-perturbations">II. Calibration stability under perturbations<a class="anchor-link" href="#II.-Calibration-stability-under-perturbations">¶</a></h4>
 </div>
 </div>
 </div>
@@ -15523,7 +15461,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.b.-Predictive-performance">5.b. Predictive performance<a class="anchor-link" href="#5.b.-Predictive-performance">¶</a></h2><p><a id="d5b"></a>
+<h3 id="5.b.-Predictive-performance">5.b. Predictive performance<a class="anchor-link" href="#5.b.-Predictive-performance">¶</a></h3><p><a id="d5b"></a>
 <em>(Are forecasts accurate and reliable?)</em></p>
 </div>
 </div>
@@ -16244,7 +16182,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.c.-Error-decomposition">5.c. Error decomposition<a class="anchor-link" href="#5.c.-Error-decomposition">¶</a></h2><p><a id="d5c"></a>
+<h3 id="5.c.-Error-decomposition">5.c. Error decomposition<a class="anchor-link" href="#5.c.-Error-decomposition">¶</a></h3><p><a id="d5c"></a>
 <em>(What drives model error?)</em></p>
 </div>
 </div>
@@ -16268,7 +16206,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="I.-Structural-vs-stochastic-contribution">I. Structural vs stochastic contribution<a class="anchor-link" href="#I.-Structural-vs-stochastic-contribution">¶</a></h3>
+<h4 id="I.-Structural-vs-stochastic-contribution">I. Structural vs stochastic contribution<a class="anchor-link" href="#I.-Structural-vs-stochastic-contribution">¶</a></h4>
 </div>
 </div>
 </div>
@@ -16353,7 +16291,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="II.-Monte-Carlo-error">II. Monte Carlo error<a class="anchor-link" href="#II.-Monte-Carlo-error">¶</a></h3>
+<h4 id="II.-Monte-Carlo-error">II. Monte Carlo error<a class="anchor-link" href="#II.-Monte-Carlo-error">¶</a></h4>
 </div>
 </div>
 </div>
@@ -16414,7 +16352,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="III.-Parameter-sensitivity">III. Parameter sensitivity<a class="anchor-link" href="#III.-Parameter-sensitivity">¶</a></h3>
+<h4 id="III.-Parameter-sensitivity">III. Parameter sensitivity<a class="anchor-link" href="#III.-Parameter-sensitivity">¶</a></h4>
 </div>
 </div>
 </div>
@@ -16566,7 +16504,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="6.-Stress-Testing">6. Stress Testing<a class="anchor-link" href="#6.-Stress-Testing">¶</a></h1><p><a id="d6"></a>
+<h2 id="6.-Stress-Testing">6. Stress Testing<a class="anchor-link" href="#6.-Stress-Testing">¶</a></h2><p><a id="d6"></a>
 <em>(Does it break under stress?)</em></p>
 </div>
 </div>
@@ -16578,7 +16516,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.a.-Extreme-scenarios">6.a. Extreme scenarios<a class="anchor-link" href="#6.a.-Extreme-scenarios">¶</a></h2><p><a id="d6a"></a>
+<h3 id="6.a.-Extreme-scenarios">6.a. Extreme scenarios<a class="anchor-link" href="#6.a.-Extreme-scenarios">¶</a></h3><p><a id="d6a"></a>
 <em>(How does the model behave under extreme conditions?)</em></p>
 </div>
 </div>
@@ -17042,7 +16980,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="I.-Deterministic-parameter-stresses">I. Deterministic parameter stresses<a class="anchor-link" href="#I.-Deterministic-parameter-stresses">¶</a></h3>
+<h4 id="I.-Deterministic-parameter-stresses">I. Deterministic parameter stresses<a class="anchor-link" href="#I.-Deterministic-parameter-stresses">¶</a></h4>
 </div>
 </div>
 </div>
@@ -17093,7 +17031,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="II.-Sigma-stresses">II. Sigma stresses<a class="anchor-link" href="#II.-Sigma-stresses">¶</a></h3>
+<h4 id="II.-Sigma-stresses">II. Sigma stresses<a class="anchor-link" href="#II.-Sigma-stresses">¶</a></h4>
 </div>
 </div>
 </div>
@@ -17130,7 +17068,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="III.-Summary-Impact">III. Summary Impact<a class="anchor-link" href="#III.-Summary-Impact">¶</a></h3>
+<h4 id="III.-Summary-Impact">III. Summary Impact<a class="anchor-link" href="#III.-Summary-Impact">¶</a></h4>
 </div>
 </div>
 </div>
@@ -17174,7 +17112,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.b.-Parameter-shocks">6.b. Parameter shocks<a class="anchor-link" href="#6.b.-Parameter-shocks">¶</a></h2><p><a id="d6b"></a>
+<h3 id="6.b.-Parameter-shocks">6.b. Parameter shocks<a class="anchor-link" href="#6.b.-Parameter-shocks">¶</a></h3><p><a id="d6b"></a>
 <em>(How do outputs respond to parameter shocks?)</em></p>
 </div>
 </div>
@@ -17437,7 +17375,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="I.-Deterministic-scenarios">I. Deterministic scenarios<a class="anchor-link" href="#I.-Deterministic-scenarios">¶</a></h3>
+<h4 id="I.-Deterministic-scenarios">I. Deterministic scenarios<a class="anchor-link" href="#I.-Deterministic-scenarios">¶</a></h4>
 </div>
 </div>
 </div>
@@ -17538,7 +17476,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="II.-Stochastic-scenarios">II. Stochastic scenarios<a class="anchor-link" href="#II.-Stochastic-scenarios">¶</a></h3>
+<h4 id="II.-Stochastic-scenarios">II. Stochastic scenarios<a class="anchor-link" href="#II.-Stochastic-scenarios">¶</a></h4>
 </div>
 </div>
 </div>
@@ -17641,7 +17579,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.c.-Breakdown-regions">6.c. Breakdown regions<a class="anchor-link" href="#6.c.-Breakdown-regions">¶</a></h2><p><a id="d6c"></a>
+<h3 id="6.c.-Breakdown-regions">6.c. Breakdown regions<a class="anchor-link" href="#6.c.-Breakdown-regions">¶</a></h3><p><a id="d6c"></a>
 <em>(Where does the model fail or become unstable?)</em></p>
 </div>
 </div>
@@ -19982,7 +19920,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.d.-Robustness">6.d. Robustness<a class="anchor-link" href="#6.d.-Robustness">¶</a></h2><p><a id="d6d"></a>
+<h3 id="6.d.-Robustness">6.d. Robustness<a class="anchor-link" href="#6.d.-Robustness">¶</a></h3><p><a id="d6d"></a>
 <em>(Is behavior consistent across scenarios?)</em></p>
 </div>
 </div>
@@ -21379,7 +21317,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="7.-Validation-Conclusion">7. Validation Conclusion<a class="anchor-link" href="#7.-Validation-Conclusion">¶</a></h1><p><a id="d7"></a>
+<h2 id="7.-Validation-Conclusion">7. Validation Conclusion<a class="anchor-link" href="#7.-Validation-Conclusion">¶</a></h2><p><a id="d7"></a>
 <em>(Should we approve it?)</em></p>
 </div>
 </div>
@@ -21391,7 +21329,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.a.-Approval-status">7.a. Approval status<a class="anchor-link" href="#7.a.-Approval-status">¶</a></h2><p><a id="d7a"></a>
+<h3 id="7.a.-Approval-status">7.a. Approval status<a class="anchor-link" href="#7.a.-Approval-status">¶</a></h3><p><a id="d7a"></a>
 <em>(Is the model fit for use?)</em></p>
 </div>
 </div>
@@ -21417,7 +21355,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.b.-Limitations">7.b. Limitations<a class="anchor-link" href="#7.b.-Limitations">¶</a></h2><p><a id="d7b"></a>
+<h3 id="7.b.-Limitations">7.b. Limitations<a class="anchor-link" href="#7.b.-Limitations">¶</a></h3><p><a id="d7b"></a>
 <em>(What limitations must be acknowledged?)</em></p>
 </div>
 </div>
@@ -21440,7 +21378,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-Absence-of-empirical-market-data-validation.">1. Absence of empirical market-data validation.<a class="anchor-link" href="#1.-Absence-of-empirical-market-data-validation.">¶</a></h3><p><strong>Impact</strong>: High. This directly limits production use and external credibility.</p>
+<h4 id="I.-Absence-of-empirical-market-data-validation.">I. Absence of empirical market-data validation.<a class="anchor-link" href="#I.-Absence-of-empirical-market-data-validation.">¶</a></h4><p><strong>Impact</strong>: High. This directly limits production use and external credibility.</p>
 <p>The calibration and outcomes exercises are performed against synthetic term structures rather than observed market CDS data. As a result, the study demonstrates internal consistency and recovery of synthetic truth, but does not establish real-world pricing accuracy, market stability across regimes, or live calibration performance. This is the most important limitation from a model-risk perspective, because production suitability depends not only on internal correctness but also on empirical adequacy.</p>
 </div>
 </div>
@@ -21452,7 +21390,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Calibration-sensitivity-to-initialization-and-potential-identifiability-issues.">2. Calibration sensitivity to initialization and potential identifiability issues.<a class="anchor-link" href="#2.-Calibration-sensitivity-to-initialization-and-potential-identifiability-issues.">¶</a></h3><p><strong>Impact</strong>: High. This affects parameter reliability and model governance, even if the pricing engine is sound.</p>
+<h4 id="II.-Calibration-sensitivity-to-initialization-and-potential-identifiability-issues.">II. Calibration sensitivity to initialization and potential identifiability issues.<a class="anchor-link" href="#II.-Calibration-sensitivity-to-initialization-and-potential-identifiability-issues.">¶</a></h4><p><strong>Impact</strong>: High. This affects parameter reliability and model governance, even if the pricing engine is sound.</p>
 <p>Although calibration performs well near the synthetic truth and is stable under small spread perturbations and leave-one-out maturity tests, the initial-guess stability exercise shows that the optimizer can converge to materially different parameter values with substantially worse fit. This indicates a nontrivial calibration landscape with potential local minima or weak identifiability among parameters. The implication is that calibration quality depends on solver controls, initialization design, and parameter bounds, which introduces governance risk even when the pricing engine itself is sound.</p>
 </div>
 </div>
@@ -21464,7 +21402,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Reduced-form-specification-limits-economic-interpretability.">3. Reduced-form specification limits economic interpretability.<a class="anchor-link" href="#3.-Reduced-form-specification-limits-economic-interpretability.">¶</a></h3><p><strong>Impact</strong>: Moderate. This is structurally important but does not invalidate the model for reduced-form CDS pricing.</p>
+<h4 id="III.-Reduced-form-specification-limits-economic-interpretability.">III. Reduced-form specification limits economic interpretability.<a class="anchor-link" href="#III.-Reduced-form-specification-limits-economic-interpretability.">¶</a></h4><p><strong>Impact</strong>: Moderate. This is structurally important but does not invalidate the model for reduced-form CDS pricing.</p>
 <p>The model treats default as an exogenous jump governed by stochastic intensity. This is appropriate for pricing and term-structure analysis, but it does not capture firm-value dynamics, capital structure effects, or other structural drivers of credit deterioration. Accordingly, the model is better suited to reduced-form pricing and sensitivity analysis than to economically structural interpretation of default mechanisms.</p>
 </div>
 </div>
@@ -21476,7 +21414,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Structural-weakness-in-Feller-violating-parameter-regions.">4. Structural weakness in Feller-violating parameter regions.<a class="anchor-link" href="#4.-Structural-weakness-in-Feller-violating-parameter-regions.">¶</a></h3><p><strong>Impact</strong>: Moderate. The issue is structural rather than numerical and can be controlled with parameter restrictions.</p>
+<h4 id="IV.-Structural-weakness-in-Feller-violating-parameter-regions.">IV. Structural weakness in Feller-violating parameter regions.<a class="anchor-link" href="#IV.-Structural-weakness-in-Feller-violating-parameter-regions.">¶</a></h4><p><strong>Impact</strong>: Moderate. The issue is structural rather than numerical and can be controlled with parameter restrictions.</p>
 <p>Breakdown analysis shows that much of the $(\kappa,\sigma)$ grid falls into regions of severe Feller violation. While pricing outputs remain numerically stable and smooth even near the boundary, these regions are structurally weaker because the underlying CIR process loses its standard positivity-preserving admissibility properties. Full truncation mitigates numerical failure but does not eliminate the conceptual concern. These regions should therefore be treated as restricted or monitored parameter regimes rather than as standard operating conditions.</p>
 </div>
 </div>
@@ -21488,7 +21426,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Discretization-and-simulation-approximation-remain-present.">5. Discretization and simulation approximation remain present.<a class="anchor-link" href="#5.-Discretization-and-simulation-approximation-remain-present.">¶</a></h3><p><strong>Impact</strong>: Low to Moderate. Verification results show it is small on practical grids.</p>
+<h4 id="V.-Discretization-and-simulation-approximation-remain-present.">V. Discretization and simulation approximation remain present.<a class="anchor-link" href="#V.-Discretization-and-simulation-approximation-remain-present.">¶</a></h4><p><strong>Impact</strong>: Low to Moderate. Verification results show it is small on practical grids.</p>
 <p>The model relies on full-truncation Euler simulation and discretized default-time construction. Verification results show that time-step errors are small at practical grids and Monte Carlo scaling is correct, but approximation error is not zero. This is especially relevant in more extreme parameter regimes, where continuous-time and discretized behavior may diverge more materially.</p>
 </div>
 </div>
@@ -21500,7 +21438,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Limited-spread-sensitivity-to-volatility.">6. Limited spread sensitivity to volatility.<a class="anchor-link" href="#6.-Limited-spread-sensitivity-to-volatility.">¶</a></h3><p><strong>Impact</strong>: Low to Moderate. Secondary relative to calibration and empirical-validation issues.</p>
+<h4 id="VI.-Limited-spread-sensitivity-to-volatility.">VI. Limited spread sensitivity to volatility.<a class="anchor-link" href="#VI.-Limited-spread-sensitivity-to-volatility.">¶</a></h4><p><strong>Impact</strong>: Low to Moderate. Secondary relative to calibration and empirical-validation issues.</p>
 <p>Robustness results show that spread levels are much more sensitive to $\theta$ and $R$ than to $\sigma$. This is consistent with the model structure, but it also means the framework may underrepresent volatility-driven credit effects in environments where dispersion or uncertainty in intensity dynamics is itself a primary risk driver.</p>
 </div>
 </div>
@@ -21512,7 +21450,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.c.-Usage-restrictions">7.c. Usage restrictions<a class="anchor-link" href="#7.c.-Usage-restrictions">¶</a></h2><p><a id="d7c"></a>
+<h3 id="7.c.-Usage-restrictions">7.c. Usage restrictions<a class="anchor-link" href="#7.c.-Usage-restrictions">¶</a></h3><p><a id="d7c"></a>
 <em>(Where should the model not be used?)</em></p>
 </div>
 </div>
@@ -21535,7 +21473,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-Permitted-Use-Cases">1. Permitted Use Cases<a class="anchor-link" href="#1.-Permitted-Use-Cases">¶</a></h3><p>A. The model is approved for:</p>
+<h4 id="I.-Permitted-Use-Cases">I. Permitted Use Cases<a class="anchor-link" href="#I.-Permitted-Use-Cases">¶</a></h4><p>A. The model is approved for:</p>
 <ol>
 <li>CDS pricing analysis in controlled environments.</li>
 <li>Sensitivity and scenario analysis.</li>
@@ -21558,7 +21496,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Prohibited-Use-Cases">2. Prohibited Use Cases<a class="anchor-link" href="#2.-Prohibited-Use-Cases">¶</a></h3><p>A. The model must not be used for:</p>
+<h4 id="II.-Prohibited-Use-Cases">II. Prohibited Use Cases<a class="anchor-link" href="#II.-Prohibited-Use-Cases">¶</a></h4><p>A. The model must not be used for:</p>
 <ol>
 <li>Production pricing or trading decisions without further validation.</li>
 <li>Regulatory capital or accounting valuation.</li>
@@ -21581,7 +21519,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Parameter-Admissibility-Restrictions">3. Parameter Admissibility Restrictions<a class="anchor-link" href="#3.-Parameter-Admissibility-Restrictions">¶</a></h3><p>A. To avoid structurally weak regions:</p>
+<h4 id="III.-Parameter-Admissibility-Restrictions">III. Parameter Admissibility Restrictions<a class="anchor-link" href="#III.-Parameter-Admissibility-Restrictions">¶</a></h4><p>A. To avoid structurally weak regions:</p>
 <ol>
 <li>The Feller condition region must be monitored, and severe violations must be excluded.</li>
 <li>Parameter combinations with large negative Feller margins must be treated as invalid or flagged.</li>
@@ -21601,7 +21539,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Calibration-Controls">4. Calibration Controls<a class="anchor-link" href="#4.-Calibration-Controls">¶</a></h3><p>Due to sensitivity to initialization:</p>
+<h4 id="IV.-Calibration-Controls">IV. Calibration Controls<a class="anchor-link" href="#IV.-Calibration-Controls">¶</a></h4><p>Due to sensitivity to initialization:</p>
 <p>A. Calibration must be:</p>
 <ol>
 <li>Run with multiple initial guesses, or</li>
@@ -21623,7 +21561,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Numerical-/-Simulation-Controls">5. Numerical / Simulation Controls<a class="anchor-link" href="#5.-Numerical-/-Simulation-Controls">¶</a></h3><p>A. Time step must satisfy:</p>
+<h4 id="V.-Numerical-/-Simulation-Controls">V. Numerical / Simulation Controls<a class="anchor-link" href="#V.-Numerical-/-Simulation-Controls">¶</a></h4><p>A. Time step must satisfy:</p>
 <ol>
 <li>$\Delta t \leq 10^{-2}$.</li>
 </ol>
@@ -21649,7 +21587,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Interpretation-Constraints">6. Interpretation Constraints<a class="anchor-link" href="#6.-Interpretation-Constraints">¶</a></h3><p>A. Results must be interpreted as:</p>
+<h4 id="VI.-Interpretation-Constraints">VI. Interpretation Constraints<a class="anchor-link" href="#VI.-Interpretation-Constraints">¶</a></h4><p>A. Results must be interpreted as:</p>
 <ol>
 <li>Risk-neutral reduced-form outputs, not structural credit measures.</li>
 </ol>
@@ -21668,7 +21606,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.d.-Required-improvements">7.d. Required improvements<a class="anchor-link" href="#7.d.-Required-improvements">¶</a></h2><p><a id="d7d"></a>
+<h3 id="7.d.-Required-improvements">7.d. Required improvements<a class="anchor-link" href="#7.d.-Required-improvements">¶</a></h3><p><a id="d7d"></a>
 <em>(What remediation is required?)</em></p>
 </div>
 </div>
@@ -21691,7 +21629,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-Empirical-Market-Data-Validation">1. Empirical Market-Data Validation<a class="anchor-link" href="#1.-Empirical-Market-Data-Validation">¶</a></h3><p><strong>Priority</strong>: High. Current validation is based on synthetic data and does not establish real-world performance.</p>
+<h4 id="I.-Empirical-Market-Data-Validation">I. Empirical Market-Data Validation<a class="anchor-link" href="#I.-Empirical-Market-Data-Validation">¶</a></h4><p><strong>Priority</strong>: High. Current validation is based on synthetic data and does not establish real-world performance.</p>
 <p>A. The model must be validated against real CDS market data, including:</p>
 <ol>
 <li>Calibration to observed CDS term structures.</li>
@@ -21714,7 +21652,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Robust-Calibration-Framework">2. Robust Calibration Framework<a class="anchor-link" href="#2.-Robust-Calibration-Framework">¶</a></h3><p><strong>Priority</strong>: High. Calibration results show strong dependence on initial conditions despite good local fit.</p>
+<h4 id="II.-Robust-Calibration-Framework">II. Robust Calibration Framework<a class="anchor-link" href="#II.-Robust-Calibration-Framework">¶</a></h4><p><strong>Priority</strong>: High. Calibration results show strong dependence on initial conditions despite good local fit.</p>
 <p>A. Calibration procedures must be strengthened to address initialization sensitivity and potential non-uniqueness:</p>
 <ol>
 <li>Implement multi-start optimization.</li>
@@ -21737,7 +21675,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Parameter-Admissibility-Enforcement">3. Parameter Admissibility Enforcement<a class="anchor-link" href="#3.-Parameter-Admissibility-Enforcement">¶</a></h3><p><strong>Priority</strong>: High. Large regions of parameter space exhibit severe Feller violations, which weaken the theoretical foundation of the model.</p>
+<h4 id="III.-Parameter-Admissibility-Enforcement">III. Parameter Admissibility Enforcement<a class="anchor-link" href="#III.-Parameter-Admissibility-Enforcement">¶</a></h4><p><strong>Priority</strong>: High. Large regions of parameter space exhibit severe Feller violations, which weaken the theoretical foundation of the model.</p>
 <p>A. Explicit enforcement of admissible parameter regions is required:</p>
 <ol>
 <li>Implement hard constraints on the Feller condition (or bounded violation tolerance).</li>
@@ -21754,7 +21692,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Enhanced-Model-Specification">4. Enhanced Model Specification<a class="anchor-link" href="#4.-Enhanced-Model-Specification">¶</a></h3><p><strong>Priority</strong>: Moderate. The current one-factor CIR structure may limit the ability to capture complex term-structure dynamics.</p>
+<h4 id="IV.-Enhanced-Model-Specification">IV. Enhanced Model Specification<a class="anchor-link" href="#IV.-Enhanced-Model-Specification">¶</a></h4><p><strong>Priority</strong>: Moderate. The current one-factor CIR structure may limit the ability to capture complex term-structure dynamics.</p>
 <p>A. Consider extending the model to improve flexibility and realism:</p>
 <ol>
 <li>Time-dependent parameters such as $\theta(t)$ or $\lambda_0(t)$.</li>
@@ -21771,7 +21709,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Improved-Default-Time-Modeling">5. Improved Default-Time Modeling<a class="anchor-link" href="#5.-Improved-Default-Time-Modeling">¶</a></h3><p><strong>Priority</strong>: Moderate. Although discretization error is small, it remains a structural approximation.</p>
+<h4 id="V.-Improved-Default-Time-Modeling">V. Improved Default-Time Modeling<a class="anchor-link" href="#V.-Improved-Default-Time-Modeling">¶</a></h4><p><strong>Priority</strong>: Moderate. Although discretization error is small, it remains a structural approximation.</p>
 <p>A. Refine the treatment of default timing:</p>
 <ol>
 <li>Implement exact or higher-order default-time simulation methods.</li>
@@ -21788,7 +21726,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Expanded-Sensitivity-and-Stress-Coverage">6. Expanded Sensitivity and Stress Coverage<a class="anchor-link" href="#6.-Expanded-Sensitivity-and-Stress-Coverage">¶</a></h3><p><strong>Priority</strong>: Moderate. Current stress testing is well-structured but primarily univariate.</p>
+<h4 id="VI.-Expanded-Sensitivity-and-Stress-Coverage">VI. Expanded Sensitivity and Stress Coverage<a class="anchor-link" href="#VI.-Expanded-Sensitivity-and-Stress-Coverage">¶</a></h4><p><strong>Priority</strong>: Moderate. Current stress testing is well-structured but primarily univariate.</p>
 <p>A. Extend stress testing to cover:</p>
 <ol>
 <li>Joint parameter shocks (not only marginal shocks).</li>
@@ -21809,7 +21747,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.-Production-Controls-and-Automation">7. Production Controls and Automation<a class="anchor-link" href="#7.-Production-Controls-and-Automation">¶</a></h3><p><strong>Priority</strong>: Moderate.</p>
+<h4 id="VII.-Production-Controls-and-Automation">VII. Production Controls and Automation<a class="anchor-link" href="#VII.-Production-Controls-and-Automation">¶</a></h4><p><strong>Priority</strong>: Moderate.</p>
 <p>A. Implement automated controls aligned with usage restrictions:</p>
 <ol>
 <li>Parameter validation checks (e.g. Feller margin thresholds).</li>
@@ -21831,7 +21769,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="8.-Documentation-and-Governance-Enhancements">8. Documentation and Governance Enhancements<a class="anchor-link" href="#8.-Documentation-and-Governance-Enhancements">¶</a></h3><p><strong>Priority</strong>: Low to Moderate. Necessary for auditability and future production consideration.</p>
+<h4 id="VIII.-Documentation-and-Governance-Enhancements">VIII. Documentation and Governance Enhancements<a class="anchor-link" href="#VIII.-Documentation-and-Governance-Enhancements">¶</a></h4><p><strong>Priority</strong>: Low to Moderate. Necessary for auditability and future production consideration.</p>
 <p>Documentation and governance should be enhanced to ensure reproducibility, auditability, and controlled model evolution, including formal documentation of methodology, assumptions, parameter constraints, and validation results, as well as version control and change tracking.</p>
 </div>
 </div>
@@ -21843,7 +21781,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="8.-Ongoing-Monitoring">8. Ongoing Monitoring<a class="anchor-link" href="#8.-Ongoing-Monitoring">¶</a></h1><p><a id="d8"></a>
+<h2 id="8.-Ongoing-Monitoring">8. Ongoing Monitoring<a class="anchor-link" href="#8.-Ongoing-Monitoring">¶</a></h2><p><a id="d8"></a>
 <em>(How do we keep it under control?)</em></p>
 </div>
 </div>
@@ -21855,7 +21793,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8.a.-Performance-tracking">8.a. Performance tracking<a class="anchor-link" href="#8.a.-Performance-tracking">¶</a></h2><p><a id="d8a"></a><a id="d8a"></a>
+<h3 id="8.a.-Performance-tracking">8.a. Performance tracking<a class="anchor-link" href="#8.a.-Performance-tracking">¶</a></h3><p><a id="d8a"></a><a id="d8a"></a>
 <em>(How is performance tracked over time?)</em></p>
 </div>
 </div>
@@ -21878,7 +21816,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-Pricing-Accuracy-Monitoring">1. Pricing Accuracy Monitoring<a class="anchor-link" href="#1.-Pricing-Accuracy-Monitoring">¶</a></h3><p>A. Model-implied CDS spreads should be regularly compared against:</p>
+<h4 id="I.-Pricing-Accuracy-Monitoring">I. Pricing Accuracy Monitoring<a class="anchor-link" href="#I.-Pricing-Accuracy-Monitoring">¶</a></h4><p>A. Model-implied CDS spreads should be regularly compared against:</p>
 <ol>
 <li>Observed market spreads (when available), or</li>
 <li>Benchmark models (e.g. piecewise hazard or deterministic CIR).</li>
@@ -21906,7 +21844,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Calibration-Quality-Monitoring">2. Calibration Quality Monitoring<a class="anchor-link" href="#2.-Calibration-Quality-Monitoring">¶</a></h3><p>A. Each calibration run must be evaluated using:</p>
+<h4 id="II.-Calibration-Quality-Monitoring">II. Calibration Quality Monitoring<a class="anchor-link" href="#II.-Calibration-Quality-Monitoring">¶</a></h4><p>A. Each calibration run must be evaluated using:</p>
 <ol>
 <li>RMSE of fitted spreads.</li>
 <li>Maximum absolute error.</li>
@@ -21929,7 +21867,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Parameter-Stability-Tracking">3. Parameter Stability Tracking<a class="anchor-link" href="#3.-Parameter-Stability-Tracking">¶</a></h3><p>A. Calibrated parameters $(\kappa,\theta,\sigma,\lambda_0)$ must be monitored over time:</p>
+<h4 id="III.-Parameter-Stability-Tracking">III. Parameter Stability Tracking<a class="anchor-link" href="#III.-Parameter-Stability-Tracking">¶</a></h4><p>A. Calibrated parameters $(\kappa,\theta,\sigma,\lambda_0)$ must be monitored over time:</p>
 <ol>
 <li>Track time series of parameter estimates.</li>
 <li>Compute rolling mean and variance.</li>
@@ -21956,7 +21894,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Numerical-Stability-Monitoring">4. Numerical Stability Monitoring<a class="anchor-link" href="#4.-Numerical-Stability-Monitoring">¶</a></h3><p>A. Simulation outputs must be monitored to ensure numerical reliability:</p>
+<h4 id="IV.-Numerical-Stability-Monitoring">IV. Numerical Stability Monitoring<a class="anchor-link" href="#IV.-Numerical-Stability-Monitoring">¶</a></h4><p>A. Simulation outputs must be monitored to ensure numerical reliability:</p>
 <ol>
 <li>Standard error of Monte Carlo estimates.</li>
 <li>Relative standard error (RSE).</li>
@@ -21978,7 +21916,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Structural-Consistency-Checks">5. Structural Consistency Checks<a class="anchor-link" href="#5.-Structural-Consistency-Checks">¶</a></h3><p>A. The following structural diagnostics should be tracked:</p>
+<h4 id="V.-Structural-Consistency-Checks">V. Structural Consistency Checks<a class="anchor-link" href="#V.-Structural-Consistency-Checks">¶</a></h4><p>A. The following structural diagnostics should be tracked:</p>
 <ol>
 <li>Feller margin $2\kappa\theta-\sigma^2$.</li>
 <li>Positivity of simulated intensities.</li>
@@ -21995,7 +21933,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Sensitivity-Consistency-Monitoring">6. Sensitivity Consistency Monitoring<a class="anchor-link" href="#6.-Sensitivity-Consistency-Monitoring">¶</a></h3><p>A. Periodic re-evaluation of parameter sensitivities should confirm that:</p>
+<h4 id="VI.-Sensitivity-Consistency-Monitoring">VI. Sensitivity Consistency Monitoring<a class="anchor-link" href="#VI.-Sensitivity-Consistency-Monitoring">¶</a></h4><p>A. Periodic re-evaluation of parameter sensitivities should confirm that:</p>
 <ol>
 <li>Spreads remain most sensitive to $\theta$ and $R$.</li>
 <li>Sensitivity to $\sigma$ remains limited.</li>
@@ -22015,7 +21953,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8.b.-Model-drift">8.b. Model drift<a class="anchor-link" href="#8.b.-Model-drift">¶</a></h2><p><a id="d8b"></a>
+<h3 id="8.b.-Model-drift">8.b. Model drift<a class="anchor-link" href="#8.b.-Model-drift">¶</a></h3><p><a id="d8b"></a>
 <em>(How is drift detected?)</em></p>
 </div>
 </div>
@@ -22038,7 +21976,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-Parameter-Drift">1. Parameter Drift<a class="anchor-link" href="#1.-Parameter-Drift">¶</a></h3><p>Drift in calibrated parameters $(\kappa,\theta,\sigma,\lambda_0)$ should be tracked over time.</p>
+<h4 id="I.-Parameter-Drift">I. Parameter Drift<a class="anchor-link" href="#I.-Parameter-Drift">¶</a></h4><p>Drift in calibrated parameters $(\kappa,\theta,\sigma,\lambda_0)$ should be tracked over time.</p>
 <p>A. Indicators of parameter drift include:</p>
 <ol>
 <li>Sustained trends in parameter levels.</li>
@@ -22066,7 +22004,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Performance-Drift">2. Performance Drift<a class="anchor-link" href="#2.-Performance-Drift">¶</a></h3><p>A. Model performance should be tracked over time using:</p>
+<h4 id="II.-Performance-Drift">II. Performance Drift<a class="anchor-link" href="#II.-Performance-Drift">¶</a></h4><p>A. Model performance should be tracked over time using:</p>
 <ol>
 <li>MAE / RMSE of spreads.</li>
 <li>Predictive error (out-of-sample, if available).</li>
@@ -22089,7 +22027,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Calibration-Drift">3. Calibration Drift<a class="anchor-link" href="#3.-Calibration-Drift">¶</a></h3><p>A. Changes in calibration behavior should be monitored:</p>
+<h4 id="III.-Calibration-Drift">III. Calibration Drift<a class="anchor-link" href="#III.-Calibration-Drift">¶</a></h4><p>A. Changes in calibration behavior should be monitored:</p>
 <ol>
 <li>Increased sensitivity to initial guesses.</li>
 <li>Failure to converge reliably.</li>
@@ -22111,7 +22049,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Structural-Drift">4. Structural Drift<a class="anchor-link" href="#4.-Structural-Drift">¶</a></h3><p>Structural drift occurs when the model’s assumptions no longer align with observed data.</p>
+<h4 id="IV.-Structural-Drift">IV. Structural Drift<a class="anchor-link" href="#IV.-Structural-Drift">¶</a></h4><p>Structural drift occurs when the model’s assumptions no longer align with observed data.</p>
 <p>A. Indicators include:</p>
 <ol>
 <li>Inability to fit term structure shapes (e.g. inverted or highly irregular curves).</li>
@@ -22133,7 +22071,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Regime-Shift-Detection">5. Regime Shift Detection<a class="anchor-link" href="#5.-Regime-Shift-Detection">¶</a></h3><p>A. The model should be monitored for broader regime changes, such as:</p>
+<h4 id="V.-Regime-Shift-Detection">V. Regime Shift Detection<a class="anchor-link" href="#V.-Regime-Shift-Detection">¶</a></h4><p>A. The model should be monitored for broader regime changes, such as:</p>
 <ol>
 <li>Transition from low-volatility to high-volatility credit environments.</li>
 <li>Shifts in recovery assumptions or market conventions.</li>
@@ -22155,7 +22093,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Numerical-Drift">6. Numerical Drift<a class="anchor-link" href="#6.-Numerical-Drift">¶</a></h3><p>A. Numerical characteristics should also be monitored:</p>
+<h4 id="VI.-Numerical-Drift">VI. Numerical Drift<a class="anchor-link" href="#VI.-Numerical-Drift">¶</a></h4><p>A. Numerical characteristics should also be monitored:</p>
 <ol>
 <li>Increase in Monte Carlo standard error.</li>
 <li>Instability in simulation outputs.</li>
@@ -22172,7 +22110,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8.c.-Thresholds-and-triggers">8.c. Thresholds and triggers<a class="anchor-link" href="#8.c.-Thresholds-and-triggers">¶</a></h2><p><a id="d8c"></a>
+<h3 id="8.c.-Thresholds-and-triggers">8.c. Thresholds and triggers<a class="anchor-link" href="#8.c.-Thresholds-and-triggers">¶</a></h3><p><a id="d8c"></a>
 <em>(What triggers review or intervention?)</em></p>
 </div>
 </div>
@@ -22195,7 +22133,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-Pricing-Performance-Thresholds">1. Pricing Performance Thresholds<a class="anchor-link" href="#1.-Pricing-Performance-Thresholds">¶</a></h3><p>Performance metrics must remain consistent with validation benchmarks. Thresholds allow for market noise while detecting material degradation.</p>
+<h4 id="I.-Pricing-Performance-Thresholds">I. Pricing Performance Thresholds<a class="anchor-link" href="#I.-Pricing-Performance-Thresholds">¶</a></h4><p>Performance metrics must remain consistent with validation benchmarks. Thresholds allow for market noise while detecting material degradation.</p>
 <ol>
 <li>MAE $&gt;$ 2 bps $\to$ warning.</li>
 <li>MAE $&gt;$ 5 bps $\to$ escalation.</li>
@@ -22212,7 +22150,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Calibration-Quality-Thresholds">2. Calibration Quality Thresholds<a class="anchor-link" href="#2.-Calibration-Quality-Thresholds">¶</a></h3><p>Calibration outputs must meet minimum fit standards.</p>
+<h4 id="II.-Calibration-Quality-Thresholds">II. Calibration Quality Thresholds<a class="anchor-link" href="#II.-Calibration-Quality-Thresholds">¶</a></h4><p>Calibration outputs must meet minimum fit standards.</p>
 <ol>
 <li>RMSE $&gt;$ 1.0e-3 $\to$ warning.</li>
 <li>RMSE $&gt;$ 2.0e-3 $\to$ escalation.</li>
@@ -22229,7 +22167,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Parameter-Stability-Thresholds">3. Parameter Stability Thresholds<a class="anchor-link" href="#3.-Parameter-Stability-Thresholds">¶</a></h3><p>Parameter movements must remain within reasonable bounds. Model is particularly sensitive to $\theta$, and calibration instability was observed under poor initialization.</p>
+<h4 id="III.-Parameter-Stability-Thresholds">III. Parameter Stability Thresholds<a class="anchor-link" href="#III.-Parameter-Stability-Thresholds">¶</a></h4><p>Parameter movements must remain within reasonable bounds. Model is particularly sensitive to $\theta$, and calibration instability was observed under poor initialization.</p>
 <ol>
 <li>Daily/periodic parameter change $&gt;$ 20% $\to$ warning.</li>
 <li>Persistent drift over multiple periods $\to$ escalation.</li>
@@ -22245,7 +22183,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Numerical-Stability-Thresholds">4. Numerical Stability Thresholds<a class="anchor-link" href="#4.-Numerical-Stability-Thresholds">¶</a></h3><p>Simulation quality must remain within validated ranges.</p>
+<h4 id="IV.-Numerical-Stability-Thresholds">IV. Numerical Stability Thresholds<a class="anchor-link" href="#IV.-Numerical-Stability-Thresholds">¶</a></h4><p>Simulation quality must remain within validated ranges.</p>
 <ol>
 <li>Relative standard error $&gt;$ 3% $\to$ warning.</li>
 <li>Relative standard error $&gt;$ 5% $\to$ escalation.</li>
@@ -22261,7 +22199,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Structural-(Feller-Condition)-Thresholds">5. Structural (Feller Condition) Thresholds<a class="anchor-link" href="#5.-Structural-(Feller-Condition)-Thresholds">¶</a></h3><p>Parameter admissibility must be enforced. Severe violations were identified as structurally weak regions.</p>
+<h4 id="V.-Structural-(Feller-Condition)-Thresholds">V. Structural (Feller Condition) Thresholds<a class="anchor-link" href="#V.-Structural-(Feller-Condition)-Thresholds">¶</a></h4><p>Parameter admissibility must be enforced. Severe violations were identified as structurally weak regions.</p>
 <ol>
 <li>Feller margin $&lt;$ 2 $\to$ warning.</li>
 <li>Feller margin $&lt;$ -0.05 $\to$ escalation/rejection.</li>
@@ -22276,7 +22214,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Sensitivity-and-Stress-Consistency-Triggers">6. Sensitivity and Stress Consistency Triggers<a class="anchor-link" href="#6.-Sensitivity-and-Stress-Consistency-Triggers">¶</a></h3><p>Model sensitivities must remain stable. Validation shows dominant sensitivity to $\theta$ and $R$, with limited impact from $\sigma$.</p>
+<h4 id="VI.-Sensitivity-and-Stress-Consistency-Triggers">VI. Sensitivity and Stress Consistency Triggers<a class="anchor-link" href="#VI.-Sensitivity-and-Stress-Consistency-Triggers">¶</a></h4><p>Model sensitivities must remain stable. Validation shows dominant sensitivity to $\theta$ and $R$, with limited impact from $\sigma$.</p>
 <ol>
 <li>Significant increase in sensitivity to $\sigma$.</li>
 <li>Breakdown of expected ranking of parameter importance.</li>
@@ -22292,7 +22230,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.-Triggered-Actions">7. Triggered Actions<a class="anchor-link" href="#7.-Triggered-Actions">¶</a></h3><p>Threshold breaches must result in defined actions:</p>
+<h4 id="VII.-Triggered-Actions">VII. Triggered Actions<a class="anchor-link" href="#VII.-Triggered-Actions">¶</a></h4><p>Threshold breaches must result in defined actions:</p>
 <table>
 <thead>
 <tr>
@@ -22325,7 +22263,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8.d.-Recalibration-frequency">8.d. Recalibration frequency<a class="anchor-link" href="#8.d.-Recalibration-frequency">¶</a></h2><p><a id="d8d"></a>
+<h3 id="8.d.-Recalibration-frequency">8.d. Recalibration frequency<a class="anchor-link" href="#8.d.-Recalibration-frequency">¶</a></h3><p><a id="d8d"></a>
 <em>(How often is recalibration required?)</em></p>
 </div>
 </div>
@@ -22348,7 +22286,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-Baseline-Recalibration-Frequency">1. Baseline Recalibration Frequency<a class="anchor-link" href="#1.-Baseline-Recalibration-Frequency">¶</a></h3><p>A. Recalibration should be performed:</p>
+<h4 id="I.-Baseline-Recalibration-Frequency">I. Baseline Recalibration Frequency<a class="anchor-link" href="#I.-Baseline-Recalibration-Frequency">¶</a></h4><p>A. Recalibration should be performed:</p>
 <ol>
 <li>Regularly (e.g. daily or weekly) when applied to market data.</li>
 <li>On-demand for scenario analysis or stress testing.</li>
@@ -22369,7 +22307,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Event-Driven-Recalibration">2. Event-Driven Recalibration<a class="anchor-link" href="#2.-Event-Driven-Recalibration">¶</a></h3><p>A. Recalibration must be triggered outside the regular schedule if any of the following occur:</p>
+<h4 id="II.-Event-Driven-Recalibration">II. Event-Driven Recalibration<a class="anchor-link" href="#II.-Event-Driven-Recalibration">¶</a></h4><p>A. Recalibration must be triggered outside the regular schedule if any of the following occur:</p>
 <ol>
 <li>Breach of <a href="#d8c">performance thresholds</a>.</li>
 <li>Significant <a href="#d8b">parameter drift</a>.</li>
@@ -22386,7 +22324,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Recalibration-Validation">3. Recalibration Validation<a class="anchor-link" href="#3.-Recalibration-Validation">¶</a></h3><p>A. Each recalibration must be accompanied by:</p>
+<h4 id="III.-Recalibration-Validation">III. Recalibration Validation<a class="anchor-link" href="#III.-Recalibration-Validation">¶</a></h4><p>A. Each recalibration must be accompanied by:</p>
 <ol>
 <li>Verification of calibration quality (RMSE, max error).</li>
 <li>Parameter plausibility checks.</li>
@@ -22402,7 +22340,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Frequency-Adjustment">4. Frequency Adjustment<a class="anchor-link" href="#4.-Frequency-Adjustment">¶</a></h3><p>A. Recalibration frequency should be increased when:</p>
+<h4 id="IV.-Frequency-Adjustment">IV. Frequency Adjustment<a class="anchor-link" href="#IV.-Frequency-Adjustment">¶</a></h4><p>A. Recalibration frequency should be increased when:</p>
 <ol>
 <li>Markets are volatile.</li>
 <li>Parameter drift is elevated.</li>
@@ -22423,7 +22361,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8.e.-Change-management">8.e. Change management<a class="anchor-link" href="#8.e.-Change-management">¶</a></h2><p><a id="d8e"></a>
+<h3 id="8.e.-Change-management">8.e. Change management<a class="anchor-link" href="#8.e.-Change-management">¶</a></h3><p><a id="d8e"></a>
 <em>(How are model changes controlled?)</em></p>
 </div>
 </div>
@@ -22446,7 +22384,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-Types-of-Changes">1. Types of Changes<a class="anchor-link" href="#1.-Types-of-Changes">¶</a></h3><p>A. Changes include:</p>
+<h4 id="I.-Types-of-Changes">I. Types of Changes<a class="anchor-link" href="#I.-Types-of-Changes">¶</a></h4><p>A. Changes include:</p>
 <ol>
 <li>Model specification (e.g. dynamics, parameters).</li>
 <li>Numerical methods (e.g. simulation scheme, discretization).</li>
@@ -22463,7 +22401,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Change-Classification">Change Classification<a class="anchor-link" href="#Change-Classification">¶</a></h3><p>A. Changes should be classified as:</p>
+<h4 id="II.-Change-Classification">II. Change Classification<a class="anchor-link" href="#II.-Change-Classification">¶</a></h4><p>A. Changes should be classified as:</p>
 <ol>
 <li>Minor changes (e.g. code refactoring, performance improvements).</li>
 <li>Material changes (e.g. model dynamics, calibration redesign).</li>
@@ -22478,7 +22416,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Validation-Requirements">3. Validation Requirements<a class="anchor-link" href="#3.-Validation-Requirements">¶</a></h3><p>A. Minor changes require:</p>
+<h4 id="III.-Validation-Requirements">III. Validation Requirements<a class="anchor-link" href="#III.-Validation-Requirements">¶</a></h4><p>A. Minor changes require:</p>
 <ol>
 <li>Testing and documentation updates.</li>
 </ol>
@@ -22497,7 +22435,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Documentation-and-Version-Control">4. Documentation and Version Control<a class="anchor-link" href="#4.-Documentation-and-Version-Control">¶</a></h3><p>A. All changes must be:</p>
+<h4 id="IV.-Documentation-and-Version-Control">IV. Documentation and Version Control<a class="anchor-link" href="#IV.-Documentation-and-Version-Control">¶</a></h4><p>A. All changes must be:</p>
 <ol>
 <li>Documented with rationale and impact assessment.</li>
 <li>Version-controlled.</li>
@@ -22513,7 +22451,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Approval-and-Governance">5. Approval and Governance<a class="anchor-link" href="#5.-Approval-and-Governance">¶</a></h3><p>A. Material changes must be:</p>
+<h4 id="V.-Approval-and-Governance">V. Approval and Governance<a class="anchor-link" href="#V.-Approval-and-Governance">¶</a></h4><p>A. Material changes must be:</p>
 <ol>
 <li>Reviewed and approved prior to use.</li>
 <li>Supported by updated validation evidence.</li>
@@ -22523,24 +22461,37 @@ Max deviation (bps): 14.624086955714079
 </div>
 </div>
 </main>
-</div>
 <script>
 const toc = document.querySelector('.sidebar ul');
-const headers = document.querySelectorAll('h1, h2, h3');
+const headers = document.querySelectorAll('h1, h2, h3, h4');
+
+let stack = [{ level: 0, ul: toc }];
 
 headers.forEach(h => {
-  if (h.id) {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
+  if (!h.id) return;
 
-    a.href = '#' + h.id;
-    a.textContent = h.textContent;
+  const level = parseInt(h.tagName[1], 10); // 1,2,3,4
 
-    a.classList.add(h.tagName.toLowerCase());
+  const li = document.createElement('li');
+  const a = document.createElement('a');
 
-    li.appendChild(a);
-    toc.appendChild(li);
+  a.href = '#' + h.id;
+  a.textContent = h.textContent;
+  a.classList.add(h.tagName.toLowerCase());
+
+  li.appendChild(a);
+
+  while (stack.length > 1 && stack[stack.length - 1].level >= level) {
+    stack.pop();
   }
+
+  const parentUl = stack[stack.length - 1].ul;
+  parentUl.appendChild(li);
+
+  const childUl = document.createElement('ul');
+  li.appendChild(childUl);
+
+  stack.push({ level, ul: childUl });
 });
 </script>
 <script>
@@ -22549,7 +22500,7 @@ const links = document.querySelectorAll('.sidebar a');
 window.addEventListener('scroll', () => {
   let current = '';
 
-  document.querySelectorAll('h1, h2, h3').forEach(section => {
+  document.querySelectorAll('h1, h2, h3, h4').forEach(section => {
     const top = section.offsetTop;
     if (window.scrollY >= top - 100) {
       current = section.getAttribute('id');
