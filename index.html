@@ -7587,9 +7587,114 @@ a.anchor-link {
   .content main {
     max-width: 900px;
   }
+
+#sidebar-toggle {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 2000;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#sidebar-toggle:hover {
+  background: #f3f4f6;
+}
+
+.sidebar {
+  transition: transform 0.2s ease;
+}
+
+.content {
+  transition: margin-left 0.2s ease;
+}
+
+body.sidebar-collapsed .sidebar {
+  transform: translateX(-100%);
+}
+
+body.sidebar-collapsed .content {
+  margin-left: 32px !important;
+}
+.toc-group {
+  margin-bottom: 6px;
+}
+
+.toc-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc-symbol {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 2px 4px;
+  font-size: 0.85rem;
+  color: #666;
+  flex: 0 0 auto;
+}
+
+.toc-symbol:hover {
+  color: #0077cc;
+}
+
+.toc-link {
+  display: block;
+  text-decoration: none;
+  color: #444;
+  line-height: 1.35;
+  padding: 4px 6px;
+  border-left: 2px solid transparent;
+}
+
+.toc-link:hover {
+  color: #0077cc;
+}
+
+.toc-h1 {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 12px;
+}
+
+.toc-h2 {
+  font-weight: 600;
+  flex: 1 1 auto;
+}
+
+.toc-h3 {
+  padding-left: 26px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.toc-children {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-children.collapsed {
+  display: none;
+}
+
+.toc-link.active {
+  color: #0077cc;
+  font-weight: 600;
+  border-left: 2px solid #0077cc;
+  background: #eef6ff;
+}
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+
+<button id="sidebar-toggle" aria-label="Toggle table of contents">☰</button>
 
 <div class="sidebar">
   <h3>Contents</h3>
@@ -22421,7 +22526,7 @@ Max deviation (bps): 14.624086955714079
 </div>
 <script>
 const toc = document.querySelector('.sidebar ul');
-const headers = document.querySelectorAll('h2, h3');
+const headers = document.querySelectorAll('h1, h2, h3');
 
 headers.forEach(h => {
   if (h.id) {
@@ -22444,7 +22549,7 @@ const links = document.querySelectorAll('.sidebar a');
 window.addEventListener('scroll', () => {
   let current = '';
 
-  document.querySelectorAll('h2, h3').forEach(section => {
+  document.querySelectorAll('h1, h2, h3').forEach(section => {
     const top = section.offsetTop;
     if (window.scrollY >= top - 100) {
       current = section.getAttribute('id');
@@ -22469,6 +22574,14 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
+  });
+});
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('sidebar-toggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('sidebar-collapsed');
   });
 });
 </script>
